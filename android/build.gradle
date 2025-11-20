@@ -1,0 +1,33 @@
+buildscript {
+    // 🔥 MISE À JOUR : Version Kotlin compatible
+    ext.kotlin_version = '1.9.24'  // ← Change de 1.7.1 vers 1.9.24
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.google.gms:google-services:4.4.1'
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

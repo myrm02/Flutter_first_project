@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "939406572172",
+    "project_id": "mvvm-d1dfc",
+    "storage_bucket": "mvvm-d1dfc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939406572172:android:93eacf5dcec17d2a0259a9",
+        "android_client_info": {
+          "package_name": "com.example.draw_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhetmFIDYqk0lLvzlQEEg5dNTI_HRkamU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,19 @@
+- name: Run tests with coverage
+  run: flutter test --coverage
+
+- name: Generate HTML report
+  run: genhtml coverage/lcov.info -o coverage/html
+
+- name: Verify coverage >= 50%
+  run: |
+    COVERAGE=$(lcov --summary coverage/lcov.info | grep lines | awk '{print $2}' | sed 's/%//')
+    if (( $(echo "$COVERAGE < 50" | bc -l) )); then
+      echo "Coverage $COVERAGE% is below 50%"
+      exit 1
+    fi
+
+- name: Upload coverage as artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: coverage-report
+    path: coverage/html
